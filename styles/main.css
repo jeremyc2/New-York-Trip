@@ -14,7 +14,7 @@ body {
     filter: brightness(75%);
 }
 
-.accent:hover > div {
+.accent:hover > .main-title {
     text-decoration: underline;
 }
 
