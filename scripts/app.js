@@ -56,7 +56,7 @@ window.addEventListener('load', () => {
             return
         }
 
-        new ScrollMagic.Scene({triggerElement: '#second-slide' , triggerHook: 'onEnter', offset: 100, duration: 300})
+        new ScrollMagic.Scene({triggerElement: '#second-slide' , triggerHook: 'onEnter', offset: 100, duration: 500})
             .setTween(rule, {cssRule: {filter: "brightness(100%)"}})
             // .addIndicators({name: 'fade second slide'})
             .addTo(controller);
