@@ -11,8 +11,6 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
     const parsedUrl = new URL(event.request.url);
 
-    console.log(parsedUrl)
-
     // navigator.onLine
     // might have to clone request and response
 

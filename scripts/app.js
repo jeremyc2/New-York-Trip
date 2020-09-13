@@ -44,22 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
 
         // https://greensock.com/docs/v3/Plugins/CSSRulePlugin
-        var rule = CSSRulePlugin.getRule("#second-slide::before");
-        
-        if(CSSRulePlugin == null) {
-            alert("CSSRulePlugin is null")
-            return
-        }
+        // var rule = CSSRulePlugin.getRule("#second-slide::before");
 
-        if(rule == null) {
-            alert("rule is null")
-            return
-        }
-
-        new ScrollMagic.Scene({triggerElement: '#second-slide' , triggerHook: 'onEnter', offset: 100, duration: 500})
-            .setTween(rule, {cssRule: {filter: "brightness(100%)"}})
-            // .addIndicators({name: 'fade second slide'})
-            .addTo(controller);
+        // new ScrollMagic.Scene({triggerElement: '#second-slide' , triggerHook: 'onEnter', offset: 100, duration: 500})
+        //     .setTween(rule, {cssRule: {filter: "brightness(100%)"}})
+        //     // .addIndicators({name: 'fade second slide'})
+        //     .addTo(controller);
 
 
 })

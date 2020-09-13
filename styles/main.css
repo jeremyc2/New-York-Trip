@@ -143,7 +143,6 @@ body {
     background: url(../images/screen_2x.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(50%);
 
     z-index: -1;
 
