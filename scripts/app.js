@@ -1,3 +1,5 @@
+let controller = null;
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register("../serviceworker.js")
         .then(serviceWorkerRegistration => {
@@ -28,12 +30,36 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("total-cost").innerHTML = data;
         });
 
-        let controller = new ScrollMagic.Controller();
+        gsap.registerPlugin(CSSRulePlugin)
 
-        // May use Scrollmagic and GSAP
+        controller = new ScrollMagic.Controller();
+
         new ScrollMagic.Scene({triggerElement: '#first-slide' , triggerHook: 'onLeave', offset: 100})
             .setClassToggle('.cue', 'hide')
             // .addIndicators({name: 'cue'})
             .addTo(controller);
+
+})
+
+window.addEventListener('load', () => {
+
+        // https://greensock.com/docs/v3/Plugins/CSSRulePlugin
+        var rule = CSSRulePlugin.getRule("#second-slide::before");
+        
+        if(CSSRulePlugin == null) {
+            alert("CSSRulePlugin is null")
+            return
+        }
+
+        if(rule == null) {
+            alert("rule is null")
+            return
+        }
+
+        new ScrollMagic.Scene({triggerElement: '#second-slide' , triggerHook: 'onEnter', offset: 100, duration: 300})
+            .setTween(rule, {cssRule: {filter: "brightness(100%)"}})
+            // .addIndicators({name: 'fade second slide'})
+            .addTo(controller);
+
 
 })

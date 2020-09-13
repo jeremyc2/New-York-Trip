@@ -121,6 +121,12 @@ body {
 
 }
 
+#first-slide > *:not(.cue):not(.cue-icon) {
+    animation-name: fade-slide;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
 #second-slide {
 
     position: relative;
@@ -137,7 +143,7 @@ body {
     background: url(../images/screen_2x.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    /* filter: brightness(75%); */
+    filter: brightness(50%);
 
     z-index: -1;
 
@@ -289,6 +295,17 @@ body {
 
     to {
         transform: none;
+        opacity: 1;
+    }
+}
+
+@keyframes fade-slide {
+    0% {
+        transform: translateY(-16rem);
+        opacity: 0;
+    }
+    100% {
+        /* transform: none; */
         opacity: 1;
     }
 }
