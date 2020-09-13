@@ -3,6 +3,8 @@
 :root {
     --main-color: #E9A685;
     --main-font: 'Montserrat', sans-serif;
+
+    scroll-behavior: smooth;
 }
 
 body {
