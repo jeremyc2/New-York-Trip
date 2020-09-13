@@ -3,8 +3,6 @@
 :root {
     --main-color: #E9A685;
     --main-font: 'Montserrat', sans-serif;
-
-    scroll-behavior: smooth;
 }
 
 body {
@@ -255,6 +253,8 @@ body {
     z-index: 10;
 
     left: calc(50% - 15px);
+
+    cursor: pointer;
 }
   
 .cue-icon {

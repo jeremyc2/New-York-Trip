@@ -9,6 +9,12 @@ if ('serviceWorker' in navigator) {
         })
 }
 
+function scrollToSecondSlide() {
+    document.querySelector('#second-slide').scrollIntoView({ 
+        behavior: 'smooth' 
+      });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     if(document.location.origin == "https://jeremyc2.github.io")
