@@ -10,6 +10,18 @@ body {
     display: block !important;
 }
 
+.accent:hover > div > img{
+    filter: brightness(75%);
+}
+
+.accent:hover > div {
+    text-decoration: underline;
+}
+
+.accent:hover {
+    cursor: pointer;
+}
+
 .center {
     text-align: center;
 }
