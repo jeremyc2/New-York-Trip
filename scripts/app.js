@@ -10,6 +10,10 @@ if ('serviceWorker' in navigator) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    if(document.location.origin == "https://jeremyc2.github.io")
+        document.styleSheets[document.styleSheets.length - 1].disabled = true;
+
     fetch("/cost")
         .then(response => {
             return response.text();
