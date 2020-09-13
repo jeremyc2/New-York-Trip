@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+:root {
+    --main-color: #E9A685;
+    --main-font: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0px;
+    display: block !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.left-center {
+
+    height: 33.34vmin;
+    width: 50vmin;
+
+    position: absolute;
+    
+    top: 50%;
+    transform: translateY(-50%);
+
+    left: 10%;
+
+    border: solid transparent 5px;
+
+}
+
+.left-center > img {
+
+    height: 100%;
+    width: 100%;
+
+}
+
+.accent-border::before {
+
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  
+    /* transform: translate(-20px, calc(-50% - 30px)); */
+    border: solid white 5px;
+
+    z-index: -1;
+
+}
+
+.accent-border::after {
+
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+  
+    /* transform: translate(30px, calc(-50% + 30px)); */
+    border: solid var(--main-color) 5px;
+
+}
+
+#title {
+
+    position: absolute;
+    
+    top: 50%;
+    transform: translateY(-50%);
+
+    right: 10%;
+
+}
+
+#title > h1 {
+
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+
+    color: var(--main-color);
+
+    font-size: 8.5vw;
+
+    line-height: .85em;
+    width: 12ch;
+
+    text-align: right;
+
+    font-style: normal;
+    text-decoration: none;
+
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+}
+
+#title > #subtitle {
+    
+    color: white;
+    font-family: var(--main-font);
+
+    font-size: 2.5vw;
+
+    text-align: right;
+
+}
+
+.slide {
+    width: 100vw;
+    height: calc(100vh - 40px);
+    overflow: hidden;
+}
+
+#first-slide {
+
+    background-color: #37393D;
+
+}
+
+#second-slide {
+
+    position: relative;
+
+}
+
+#second-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/screen_2x.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: brightness(75%); */
+
+    z-index: -1;
+
+}
+
+#second-slide-inside {
+    /* This will make it stack on top of the ::before */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr calc(50% + 100px);
+}
+
+#activities {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+
+    text-align: center;
+
+    color: var(--main-color);
+    font-family: var(--main-font);
+
+}
+
+#activities-main-title {
+
+    font-size: 4em;
+
+    color: var(--main-color);
+    font-family: var(--main-font);
+
+    text-transform: uppercase;
+    align-self: center;
+
+    font-weight: 600;
+
+}
+
+.activities-title {
+    margin-top: 100px;
+    font-weight: 600;
+}
+
+#activities > div {
+
+    display: grid;
+    font-size: 2em;
+    width: 400px;
+    justify-items: center;
+
+}
+
+.activities-pic {
+
+    width: 300px;
+    height: 200px;
+
+    grid-row-start: 1;
+
+    position: relative;
+
+}
+
+.activities-pic::before {
+
+    border-width: 3px;
+    border-color: var(--main-color);
+
+}
+
+.activities-pic::after {
+
+    border-width: 3px;
+    border-color: #37393D;
+
+}
+
+.activities-pic > img {
+
+    width: 100%;
+    height: 100%;
+
+}
+
+.activity-description {
+    color: black;
+    font-size: .6em;
+    font-weight: 600;
+}
+
+#total-cost {
+    background-color: green;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cue {
+
+    position: absolute;
+    bottom: 0;
+    animation: clear 0.5s 1.5s forwards;
+    transform: translateY(2rem);
+    z-index: 10;
+
+    left: calc(50% - 15px);
+}
+  
+.cue-icon {
+
+    font-size:60px !important;
+
+    width: 30px;
+    height: 30px;
+
+    animation: slide-down 0.5s 1.8s forwards, pulse 2s 4s ease-in-out infinite;
+    transform: translateY(-2rem);
+    opacity: 1;
+
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes clear {
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+  
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: none;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,70 @@
+{
+    "travel": {
+        "chargargothicon": {
+            "gas": {
+                "cost": 200
+            },
+            "tolls": {
+                "cost": 110
+            },
+            "parking": {
+                "cost": 50
+            }
+        },
+        "metrocard": {
+            "cost": 20
+        }
+    },
+    "dining": {
+        "eatingout": {
+            "cost": 100
+        },
+        "groceries": {
+            "cost": 50
+        }
+    },
+    "snacks": {
+        "cost": 50
+    },
+    "lodging": {
+        "cost": 400
+    },
+    "souvenir": null,
+    "sightseeing": {
+        "citypass": {
+            "url": "https://www.citypass.com/new-york",
+            "cost": 136,
+            "places": [
+                "Empire State Building",
+                "American Museum of Natural History",
+                "The MET",
+                "Guggenheim Museum",
+                "SOL and Ellis Island",
+                "9/11 Memorial & Museum",
+                "Intrepid Sea, Air, & Space Museum"
+            ]
+        },
+        "c3": {
+            "url": "https://www.citypass.com/new-york-c3",
+            "cost": 87,
+            "places": [
+                "Empire State Building",
+                "American Museum of Natural History",
+                "The MET",
+                "Guggenheim Museum",
+                "SOL and Ellis Island",
+                "Circle Line Cruises",
+                "9/11 Memorial & Museum",
+                "Intrepid Sea, Air, & Space Museum",
+                "Museum of Modern Art",
+                "Hornblower Sightseeing Cruises"
+            ]
+        }
+    },
+    "photographer": {
+        "cost": 200
+    },
+    "luca": {
+        "cost": 100
+    }
+}
