@@ -19,8 +19,11 @@ function scrollToSecondSlide() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    if(document.location.origin == "https://jeremyc2.github.io")
+    if(document.location.origin == "https://jeremyc2.github.io") {
         document.styleSheets[document.styleSheets.length - 1].disabled = true;
+    } else {
+        console.log(document.location.origin)
+    }
 
     fetch("/cost")
         .then(response => {
