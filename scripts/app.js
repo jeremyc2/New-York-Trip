@@ -21,12 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(document.location.origin == "https://jeremyc2.github.io") {
         console.log("removing github stylesheet...")
-        var styleRulesLength = document.styleSheets[3].rules.length
         var githubStylesheet = document.styleSheets.length - 1
-        for(var x = 0; x < styleRulesLength; x++) {
-            document.styleSheets[githubStylesheet].removeRule(x)
+        var styleRulesLength = document.styleSheets[githubStylesheet].rules.length
+        if(!document.styleSheets[githubStylesheet].href.startsWith("https://jeremyc2.github.io")) {
+            for(var x = 0; x < styleRulesLength; x++) {
+                document.styleSheets[githubStylesheet].removeRule(x)
+            }
         }
-        console.log(document.styleSheets)
         // document.styleSheets[document.styleSheets.length - 1].disabled = true;
     }
 
