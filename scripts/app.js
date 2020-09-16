@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("removing github stylesheet...")
         var githubStylesheet = document.styleSheets.length - 1
         var styleRulesLength = document.styleSheets[githubStylesheet].rules.length
-        if(!document.styleSheets[githubStylesheet].href.startsWith("https://jeremyc2.github.io")) {
+        if(document.styleSheets[githubStylesheet].href == null) {
             for(var x = 0; x < styleRulesLength; x++) {
                 document.styleSheets[githubStylesheet].removeRule(x)
             }
