@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(document.location.origin == "https://jeremyc2.github.io") {
         console.log("removing github stylesheet...")
+        console.log(document.styleSheets)
         document.styleSheets[document.styleSheets.length - 1].disabled = true;
     }
 
