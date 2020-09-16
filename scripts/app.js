@@ -19,34 +19,24 @@ function scrollToSecondSlide() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    if(document.location.origin == "https://jeremyc2.github.io") {
-        var githubStylesheet = document.styleSheets.length - 1
-        var styleRulesLength = document.styleSheets[githubStylesheet].rules.length
-        if(document.styleSheets[githubStylesheet].href == null) {
-            console.log("removing github stylesheet...")
-            for(var x = 0; x < styleRulesLength; x++) {
-                document.styleSheets[githubStylesheet].removeRule(x)
-            }
-        }
-        // document.styleSheets[document.styleSheets.length - 1].disabled = true;
+    if(navigator.serviceWorker.controller != null) {
+        fetch("/cost")
+            .then(response => {
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById("total-cost").innerHTML = data;
+            });
     }
 
-    fetch("/cost")
-        .then(response => {
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById("total-cost").innerHTML = data;
-        });
+    gsap.registerPlugin(CSSRulePlugin)
 
-        gsap.registerPlugin(CSSRulePlugin)
+    controller = new ScrollMagic.Controller();
 
-        controller = new ScrollMagic.Controller();
-
-        new ScrollMagic.Scene({triggerElement: '#first-slide' , triggerHook: 'onLeave', offset: 100})
-            .setClassToggle('.cue', 'hide')
-            // .addIndicators({name: 'cue'})
-            .addTo(controller);
+    new ScrollMagic.Scene({triggerElement: '#first-slide' , triggerHook: 'onLeave', offset: 100})
+        .setClassToggle('.cue', 'hide')
+        // .addIndicators({name: 'cue'})
+        .addTo(controller);
 
 })
 
