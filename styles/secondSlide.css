@@ -33,11 +33,11 @@
 
 #second-slide-inside {
     /* This will make it stack on top of the ::before */
-    position: absolute;
+    position: relative;
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr calc(50% + 100px);
+    grid-template-rows: 250px;
 }
 
 #activities {
@@ -70,7 +70,7 @@
 }
 
 .activities-title {
-    margin-top: 100px;
+    margin-top: 50px;
     font-weight: 600;
 }
 
@@ -80,6 +80,7 @@
     font-size: 2em;
     width: 400px;
     justify-items: center;
+    margin-bottom: 100px;
 
 }
 
