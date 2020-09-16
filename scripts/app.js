@@ -19,6 +19,11 @@ function scrollToSecondSlide() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    if(document.location.origin == "https://jeremyc2.github.io") {
+        console.log("removing github stylesheet...")
+        document.styleSheets[document.styleSheets.length - 1].disabled = true;
+    }
+
     fetch("/cost")
         .then(response => {
             return response.text();
@@ -39,10 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 window.addEventListener('load', () => {
-
-    if(document.location.origin == "https://jeremyc2.github.io") {
-        document.styleSheets[document.styleSheets.length - 1].disabled = true;
-    }
 
         // https://greensock.com/docs/v3/Plugins/CSSRulePlugin
         // var rule = CSSRulePlugin.getRule("#second-slide::before");
