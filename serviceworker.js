@@ -27,36 +27,45 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
     const parsedUrl = new URL(event.request.url);
-    
-//     event.respondWith(
-//         caches.match(event.request).then(function(response) {
-//             return response || fetch(event.request);
-//         })
-//     );
 
     // navigator.onLine
     // might have to clone request and response
 
     if(parsedUrl.pathname.endsWith(".js") || parsedUrl.pathname.endsWith(".css") ||
-       parsedUrl.pathname.endsWith(".jpg") || parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg"))
-        return;
-
-    if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
+       parsedUrl.pathname.endsWith(".jpg") || parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg")) {
+           event.respondWith(
+                caches.match(event.request).then(function(response) {
+                    return response || fetch(event.request);
+                }
+           );
+    }
+    else if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
         event.respondWith(
-            fetch(path + "data/expenses.json")
-                .then(response => {
-                    return response.json()
-                })
-                .then(data => {
-                    console.log(data)
-                    return new Response(`$${calcCost(data)}`)
-                })
+            caches.match(event.request).then(function(response) {
+                return response || fetch(path + "data/expenses.json")
+                    .then(response => {
+                        return response.json()
+                    })
+                    .then(data => {
+                        console.log(data)
+                        return new Response(`$${calcCost(data)}`)
+                    })
+            });
         )
     }
     else if(parsedUrl.pathname.match(new RegExp(`^${path}data|activities*`))) {
-        return;
+        event.respondWith(
+            caches.match(event.request).then(function(response) {
+                return response || fetch(event.request);
+            }
+        );
     }
-    else if(parsedUrl.pathname !== path)
-        event.respondWith(fetch(path))
+    else {
+        event.respondWith(
+            caches.match(path).then(function(response) {
+                return response || fetch(path);
+            }
+        )
+    }
 
 })
