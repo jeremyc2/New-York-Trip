@@ -1,6 +1,6 @@
-importScripts("scripts/jsonUtils.js");
-
 const path = (new URL(self.registration.scope)).pathname;
+
+importScripts(path + "scripts/jsonUtils.js");
 
 var cacheName = "NYC-V1.0";
 const cachefiles = [
