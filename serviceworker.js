@@ -34,7 +34,7 @@ self.addEventListener("fetch", event => {
                 })
         )
     }
-    else if(parsedUrl.pathname.match(new RegExp(`^${path}data|pages*`))) {
+    else if(parsedUrl.pathname.match(new RegExp(`^${path}data|activities*`))) {
         return;
     }
     else if(parsedUrl.pathname !== path)
