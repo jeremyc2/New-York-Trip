@@ -15,6 +15,19 @@ if ('serviceWorker' in navigator) {
         })
 }
 
+navigator.serviceWorker.oncontrollerchange = () => {
+    fetch(basepath + "cost")
+    .then(response => {
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById("total-cost").innerHTML = data;
+    })
+    .catch(error => {
+        console.log("could not append cost data.");
+    });
+}
+
 function scrollToSecondSlide() {
     document.querySelector('#second-slide').scrollIntoView({ 
         behavior: 'smooth' 
@@ -22,19 +35,6 @@ function scrollToSecondSlide() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    if(navigator.serviceWorker.controller != null) {
-        fetch(basepath + "cost")
-            .then(response => {
-                return response.text();
-            })
-            .then(data => {
-                document.getElementById("total-cost").innerHTML = data;
-            })
-            .catch(error => {
-                console.log("could not append cost data.");
-            });
-    }
 
     gsap.registerPlugin(CSSRulePlugin)
 

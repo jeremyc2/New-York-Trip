@@ -5,6 +5,8 @@ const path = (new URL(self.registration.scope)).pathname
 self.addEventListener("install", event => {
     console.log("Installing...")
 
+    self.skipWaiting();
+
 });
  
 self.addEventListener("activate", event => {
