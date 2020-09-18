@@ -74,7 +74,10 @@
     font-weight: 600;
 }
 
-#activities > div {
+#activities > a {
+
+    text-decoration: none;
+    color: var(--main-color);
 
     display: grid;
     font-size: 2em;
