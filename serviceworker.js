@@ -48,11 +48,13 @@ self.addEventListener("fetch", event => {
 
     if(parsedUrl.pathname.endsWith(".js") || parsedUrl.pathname.endsWith(".css") ||
        parsedUrl.pathname.endsWith(".jpg") || parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg")) {
-           event.respondWith(
-                caches.match(event.request).then(function(response) {
-                    return response || fetch(event.request);
-                })
-           );
+            if(parsedUrl.host !== self.location.host) {
+                event.respondWith(
+                    caches.match(event.request).then(function(response) {
+                        return response || fetch(event.request);
+                    })
+                );
+           }
     }
     else if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
         event.respondWith(
