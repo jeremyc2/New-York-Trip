@@ -15,7 +15,7 @@ if ('serviceWorker' in navigator) {
         })
 }
 
-navigator.serviceWorker.oncontrollerchange = () => {
+function fetchFromController() {
     fetch(basepath + "cost")
     .then(response => {
         return response.text();
@@ -28,6 +28,8 @@ navigator.serviceWorker.oncontrollerchange = () => {
     });
 }
 
+navigator.serviceWorker.oncontrollerchange = fetchFromController;
+
 function scrollToSecondSlide() {
     document.querySelector('#second-slide').scrollIntoView({ 
         behavior: 'smooth' 
@@ -35,6 +37,10 @@ function scrollToSecondSlide() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    if(navigator.serviceWorker.controller != null) {
+        fetchFromController();
+    }
 
     gsap.registerPlugin(CSSRulePlugin)
 
