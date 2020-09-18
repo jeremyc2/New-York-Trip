@@ -3,7 +3,9 @@ importScripts("scripts/jsonUtils.js");
 const path = (new URL(self.registration.scope)).pathname;
 
 var cacheName = "NYC-V1.0";
-const cachefiles = [];
+const cachefiles = [
+    
+];
 
 self.addEventListener("install", event => {
     console.log("Installing...");
