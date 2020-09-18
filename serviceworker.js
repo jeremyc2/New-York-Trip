@@ -1,5 +1,7 @@
 importScripts("scripts/jsonUtils.js")
 
+const path = (new URL(self.registration.scope)).pathname
+
 self.addEventListener("install", event => {
     console.log("Installing...")
 });
@@ -11,6 +13,8 @@ self.addEventListener("activate", event => {
 self.addEventListener("fetch", event => {
     const parsedUrl = new URL(event.request.url);
 
+    console.log(event.request.url)
+
     // navigator.onLine
     // might have to clone request and response
 
@@ -18,9 +22,9 @@ self.addEventListener("fetch", event => {
        parsedUrl.pathname.endsWith(".jpg") || parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg"))
         return;
 
-    if(parsedUrl.pathname.match(/^\/cost*/)) {
+    if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
         event.respondWith(
-            fetch("/data/expenses.json")
+            fetch(path + "data/expenses.json")
                 .then(response => {
                     return response.json()
                 })
@@ -30,10 +34,10 @@ self.addEventListener("fetch", event => {
                 })
         )
     }
-    else if(parsedUrl.pathname.match(/^\/data|pages*/)) {
+    else if(parsedUrl.pathname.match(new RegExp(`^${path}data|pages*`))) {
         return;
     }
-    else if(parsedUrl.pathname !== "/")
-        event.respondWith(fetch("/"))
+    else if(parsedUrl.pathname !== path)
+        event.respondWith(fetch(path))
 
 })
