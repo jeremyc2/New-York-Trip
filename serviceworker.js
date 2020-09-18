@@ -17,13 +17,7 @@ const cachefiles = [
     path + "styles/keyframes.css", 
     path + "styles/main-mobile.css", 
     path + "styles/main.css", 
-    path + "styles/secondSlide.css", 
-    "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js", 
-    "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js", 
-    "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js", 
-    "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js", 
-    "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap", 
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"
+    path + "styles/secondSlide.css"
 ]
 
 self.addEventListener("install", event => {
