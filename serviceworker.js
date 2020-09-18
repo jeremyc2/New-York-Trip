@@ -2,10 +2,19 @@ importScripts("scripts/jsonUtils.js")
 
 const path = (new URL(self.registration.scope)).pathname
 
+var cacheName = "NYC-V1.0";
+const cachefiles = [];
+
 self.addEventListener("install", event => {
     console.log("Installing...")
 
     self.skipWaiting();
+    
+    event.waitUntil(
+        caches.open(cacheName).then(function(cache) {
+            return cache.addAll(cachefiles);
+        })
+    );
 
 });
  
@@ -18,6 +27,12 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
     const parsedUrl = new URL(event.request.url);
+    
+//     event.respondWith(
+//         caches.match(event.request).then(function(response) {
+//             return response || fetch(event.request);
+//         })
+//     );
 
     // navigator.onLine
     // might have to clone request and response
