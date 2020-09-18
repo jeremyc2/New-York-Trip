@@ -4,10 +4,14 @@ const path = (new URL(self.registration.scope)).pathname
 
 self.addEventListener("install", event => {
     console.log("Installing...")
-});
 
+});
+ 
 self.addEventListener("activate", event => {
     console.log("Activating...")
+
+    clients.claim();
+
 });
 
 self.addEventListener("fetch", event => {
