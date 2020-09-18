@@ -1,7 +1,7 @@
 let controller = null;
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register("../serviceworker.js")
+    navigator.serviceWorker.register("/New-York-Trip/serviceworker.js", {scope: '/New-York-Trip/'})
         .then(serviceWorkerRegistration => {
             console.log("Service Worker registered successfully :)")
         })
