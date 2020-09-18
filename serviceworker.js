@@ -1,12 +1,12 @@
-importScripts("scripts/jsonUtils.js")
+importScripts("scripts/jsonUtils.js");
 
-const path = (new URL(self.registration.scope)).pathname
+const path = (new URL(self.registration.scope)).pathname;
 
 var cacheName = "NYC-V1.0";
 const cachefiles = [];
 
 self.addEventListener("install", event => {
-    console.log("Installing...")
+    console.log("Installing...");
 
     self.skipWaiting();
     
@@ -19,7 +19,7 @@ self.addEventListener("install", event => {
 });
  
 self.addEventListener("activate", event => {
-    console.log("Activating...")
+    console.log("Activating...");
 
     clients.claim();
 
@@ -44,14 +44,14 @@ self.addEventListener("fetch", event => {
             caches.match(event.request).then(function(response) {
                 return response || fetch(path + "data/expenses.json")
                     .then(response => {
-                        return response.json()
+                        return response.json();
                     })
                     .then(data => {
-                        console.log(data)
-                        return new Response(`$${calcCost(data)}`)
-                    })
-            });
-        )
+                        console.log(data);
+                        return new Response(`$${calcCost(data)}`);
+                    });
+            })
+        );
     }
     else if(parsedUrl.pathname.match(new RegExp(`^${path}data|activities*`))) {
         event.respondWith(
@@ -65,7 +65,7 @@ self.addEventListener("fetch", event => {
             caches.match(path).then(function(response) {
                 return response || fetch(path);
             })
-        )
+        );
     }
 
-})
+});
