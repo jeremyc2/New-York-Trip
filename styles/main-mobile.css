@@ -1,9 +1,11 @@
 .center-y {
     flex-direction: column;
+    align-items: center;
 }
 
 .title-pic {
     margin-bottom: 50px;
+    width: 80%;
 }
 
 #title {

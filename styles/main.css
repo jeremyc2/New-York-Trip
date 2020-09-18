@@ -14,6 +14,10 @@ body {
     text-align: center;
 }
 
+.title-pic {
+    width: 28.125vw;
+}
+
 .title-pic > img {
 
     height: 100%;
@@ -64,12 +68,13 @@ body {
 
     position: absolute;
     display: flex;
+
+    justify-content: center;
     
     top: 50%;
     transform: translateY(-50%);
 
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 100%;
     
 }
 
