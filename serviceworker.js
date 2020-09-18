@@ -36,7 +36,7 @@ self.addEventListener("fetch", event => {
            event.respondWith(
                 caches.match(event.request).then(function(response) {
                     return response || fetch(event.request);
-                }
+                })
            );
     }
     else if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
@@ -57,14 +57,14 @@ self.addEventListener("fetch", event => {
         event.respondWith(
             caches.match(event.request).then(function(response) {
                 return response || fetch(event.request);
-            }
+            })
         );
     }
     else {
         event.respondWith(
             caches.match(path).then(function(response) {
                 return response || fetch(path);
-            }
+            })
         )
     }
 
