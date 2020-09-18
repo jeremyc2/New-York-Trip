@@ -1,7 +1,11 @@
 let controller = null;
+var basepath = "/"
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register("/New-York-Trip/serviceworker.js", {scope: '/New-York-Trip/'})
+    if(document.location.hostname !== 'localhost') {
+        basepath = "/New-York-Trip/"
+    }
+    navigator.serviceWorker.register(basepath + "serviceworker.js", {scope: basepath})
         .then(serviceWorkerRegistration => {
             console.log("Service Worker registered successfully :)")
         })
@@ -20,7 +24,7 @@ function scrollToSecondSlide() {
 document.addEventListener('DOMContentLoaded', () => {
 
     if(navigator.serviceWorker.controller != null) {
-        fetch("/cost")
+        fetch(basepath + "cost")
             .then(response => {
                 return response.text();
             })
