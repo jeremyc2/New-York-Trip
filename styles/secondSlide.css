@@ -97,14 +97,12 @@
 
 .activities-pic::before {
 
-    border-width: 3px;
     border-color: var(--main-color);
 
 }
 
 .activities-pic::after {
 
-    border-width: 3px;
     border-color: #37393D;
 
 }

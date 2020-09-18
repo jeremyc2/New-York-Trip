@@ -1,0 +1,16 @@
+.center-y {
+    flex-direction: column;
+}
+
+.title-pic {
+    margin-bottom: 50px;
+}
+
+#title {
+    width: unset;
+    text-align: center;
+}
+
+#subtitle {
+    text-align: center;
+}
