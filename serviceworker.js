@@ -73,9 +73,12 @@ self.addEventListener("fetch", event => {
            }
     }
     else if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
-        event.respondWith(
-            caches.match(event.request).then(function(response) {
-                return response || fetch(path + "data/expenses.json")
+        if(navigator.onLine == false) {
+            event.respondWith("You are offline.")
+        }
+        else {
+            event.respondWith(
+                fetch(path + "data/expenses.json")
                     .then(response => {
                         return response.json();
                     })
@@ -84,9 +87,9 @@ self.addEventListener("fetch", event => {
                         return new Response(`$${calcCost(data)}`);
                     }).catch(error => {
                         console.log("Could not retrieve cost. Network error.")
-                    });
-            })
-        );
+                    })
+            );
+        }
     }
     else if(parsedUrl.pathname.match(new RegExp(`^${path}data|activities*`))) {
         event.respondWith(
