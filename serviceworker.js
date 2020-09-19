@@ -7,6 +7,7 @@ var a = {};
 var cacheName = "NYC-V1.0";
 const cachefiles = [
     path,
+    path + "manifest.webmanifest",
     path + "activities/sightseeing",
     path + "activities/sightseeing.html",
     path + "fonts/montserrat-latin.woff2",
@@ -60,7 +61,8 @@ self.addEventListener("fetch", event => {
     // might have to clone request and response
 
     if(parsedUrl.pathname.endsWith(".js") || parsedUrl.pathname.endsWith(".css") || parsedUrl.pathname.endsWith(".jpg") ||
-       parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg") || parsedUrl.pathname.endsWith(".woff2")) {
+       parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg") || parsedUrl.pathname.endsWith(".png") ||
+       parsedUrl.pathname.endsWith(".woff2") || parsedUrl.pathname.endsWith(".webmanifest")) {
             if(parsedUrl.host == self.location.host) {
                 event.respondWith(
                     caches.match(event.request).then(function(response) {
