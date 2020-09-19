@@ -60,8 +60,8 @@ self.addEventListener("fetch", event => {
     // navigator.onLine
     // might have to clone request and response
 
-    if(parsedUrl.pathname.endsWith(".js") || parsedUrl.pathname.endsWith(".css") ||
-       parsedUrl.pathname.endsWith(".jpg") || parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg")) {
+    if(parsedUrl.pathname.endsWith(".js") || parsedUrl.pathname.endsWith(".css") || parsedUrl.pathname.endsWith(".jpg") ||
+       parsedUrl.pathname.endsWith(".jpeg") || parsedUrl.pathname.endsWith(".svg") || parsedUrl.pathname.endsWith(".woff2")) {
             if(parsedUrl.host == self.location.host) {
                 event.respondWith(
                     caches.match(event.request).then(function(response) {
