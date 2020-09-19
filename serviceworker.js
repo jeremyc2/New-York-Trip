@@ -57,7 +57,6 @@ self.addEventListener("fetch", event => {
 
     a[event.request.url] = true;
 
-    // navigator.onLine
     // might have to clone request and response
 
     if(parsedUrl.pathname.endsWith(".js") || parsedUrl.pathname.endsWith(".css") || parsedUrl.pathname.endsWith(".jpg") ||
