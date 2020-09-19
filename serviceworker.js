@@ -82,6 +82,8 @@ self.addEventListener("fetch", event => {
                     .then(data => {
                         console.log(data);
                         return new Response(`$${calcCost(data)}`);
+                    }).catch(error => {
+                        console.log("Could not retrieve cost. Network error.")
                     });
             })
         );
