@@ -75,7 +75,7 @@ self.addEventListener("fetch", event => {
     else if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
         if(navigator.onLine == false) {
             console.log("You are offline.");
-            return new Response("Cannot Load Cost");
+            event.respondWith(new Response("Cannot Load Cost"))
         }
         else {
             event.respondWith(
