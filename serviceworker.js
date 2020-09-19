@@ -74,8 +74,8 @@ self.addEventListener("fetch", event => {
     }
     else if(parsedUrl.pathname.match(new RegExp(`^${path}cost*`))) {
         if(navigator.onLine == false) {
-            event.respondWith("You are offline.")
-            return new Response("Cannot Load Cost")
+            console.log("You are offline.");
+            return new Response("Cannot Load Cost");
         }
         else {
             event.respondWith(
@@ -88,7 +88,7 @@ self.addEventListener("fetch", event => {
                         return new Response(`$${calcCost(data)}`);
                     }).catch(error => {
                         console.log("Could not retrieve cost. Network error.");
-                        return new Response("Network Error")
+                        return new Response("Network Error");
                     })
             );
         }
