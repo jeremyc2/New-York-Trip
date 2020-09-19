@@ -17,15 +17,15 @@ if ('serviceWorker' in navigator) {
 
 function fetchFromController() {
     fetch(basepath + "cost")
-    .then(response => {
-        return response.text();
-    })
-    .then(data => {
-        document.getElementById("total-cost").innerHTML = data;
-    })
-    .catch(error => {
-        console.log("Could not append cost data.");
-    });
+        .then(response => {
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById("total-cost").innerHTML = data;
+        })
+        .catch(error => {
+            console.log("Could not append cost data.");
+        });
 }
 
 navigator.serviceWorker.oncontrollerchange = fetchFromController;
