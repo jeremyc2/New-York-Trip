@@ -24,7 +24,7 @@ function fetchFromController() {
         document.getElementById("total-cost").innerHTML = data;
     })
     .catch(error => {
-        console.log("could not append cost data.");
+        console.log("Could not append cost data.");
     });
 }
 
