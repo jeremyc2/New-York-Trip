@@ -5,7 +5,6 @@ importScripts(path + "scripts/jsonUtils.js");
 var cacheName = "NYC-V1.0";
 const cachefiles = [
     path, 
-    path + "cost", 
     path + "images/boringstuff3.jpg", 
     path + "images/down-arrow.svg", 
     path + "images/icons8-new-york-40.png", 
