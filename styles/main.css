@@ -34,10 +34,10 @@ body {
 
     content: "";
     position: absolute;
-    top: -2vw;
-    left: -2vw;
-    width: calc(100% - 1vw);
-    height: calc(100% - 1vw);
+    top: -14px;
+    left: -14px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
   
     border: solid white 5px;
 
@@ -49,10 +49,10 @@ body {
 
     content: "";
     position: absolute;
-    top: 2vw;
-    left: 2vw;
-    width: calc(100% - 1vw);
-    height: calc(100% - 1vw);
+    top: 14px;
+    left: 14px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
   
     border: solid var(--main-color) 5px;
 
