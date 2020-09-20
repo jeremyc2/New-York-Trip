@@ -4,28 +4,28 @@
     "description": "Trip details for NYC trip in November",
     "icons": [
       {
-        "src": "/images/icons-192.png",
+        "src": "/New-York-Trip/images/icons-192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/images/icons-512.png",
+        "src": "/New-York-Trip/images/icons-512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
     ],
-    "start_url": "/",
+    "start_url": "/New-York-Trip/",
     "background_color": "#37393D",
     "display": "standalone",
-    "scope": "/",
+    "scope": "/New-York-Trip/",
     "theme_color": "#37393D",
     "shortcuts": [
       {
         "name": "Photoshoot",
         "short_name": "Pics",
         "description": "Where are we going to take pictures.",
-        "url": "/activities/photoshoot.html",
-        "icons": [{ "src": "images/icons8-new-york-40.png", "sizes": "192x192" }]
+        "url": "/New-York-Trip/activities/photoshoot.html",
+        "icons": [{ "src": "/New-York-Trip/images/icons8-new-york-40.png", "sizes": "192x192" }]
       }
     ]
   }
