@@ -8,6 +8,7 @@
 body {
     margin: 0px;
     display: block !important;
+    overflow-x: hidden;
 }
 
 .text-center {
