@@ -1,38 +1,22 @@
-{
-    "author": "Jeremy Chandler",
-    "short_name": "NYC-Trip",
-    "name": "New York City November 2020",
-    "description": "Trip details for NYC trip in November",
+  {
+    "author": "J.Fechner",
+    "name": "WebAPK",
+    "short_name": "Chrome WebAPK",
+    "description": "Simple template for a chrome WebAPK.",
     "orientation": "portrait",
+    "start_url": "/New-York-Trip/",
+    "scope": "/New-York-Trip/",
+    "display": "standalone",
+    "background_color": "grey",
+    "theme_color": "black",
     "icons": [
       {
-        "src": "/New-York-Trip/images/icons-192.png",
-        "type": "image/png",
-        "sizes": "192x192",
-        "purpose": "any maskable"
-      },
-      {
-        "src": "/New-York-Trip/images/icons-512.png",
-        "type": "image/png",
-        "sizes": "512x512",
-        "purpose": "any maskable"
+        "src": "/New-York-Trip/images/icons8-new-york-40.png",
+        "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
+        "type": "image/png"
       }
     ],
-    "start_url": "/New-York-Trip/",
-    "background_color": "#37393D",
-    "display": "standalone",
-    "scope": "/New-York-Trip/",
-    "theme_color": "#37393D",
-    "shortcuts": [
-      {
-        "name": "Photoshoot",
-        "short_name": "Pics",
-        "description": "Where are we going to take pictures.",
-        "url": "/New-York-Trip/activities/photoshoot.html",
-        "icons": [{ "src": "/New-York-Trip/images/icons8-new-york-40.png", "sizes": "192x192" }]
-      }
-    ],
-  	"manifest_version": 2,
+    "manifest_version": 2,
     "version": "0.1",
     "applications": {
       "gecko": {
