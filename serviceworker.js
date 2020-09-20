@@ -2,8 +2,6 @@ const path = (new URL(self.registration.scope)).pathname;
 
 importScripts(path + "scripts/jsonUtils.js");
 
-var a = {};
-
 var cacheName = "NYC-V1.0";
 const cachefiles = [
     path,
@@ -57,8 +55,6 @@ self.addEventListener("activate", event => {
 
 self.addEventListener("fetch", event => {
     const parsedUrl = new URL(event.request.url);
-
-    a[event.request.url] = true;
 
     // might have to clone request and response
 
