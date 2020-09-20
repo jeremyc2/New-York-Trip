@@ -15,7 +15,7 @@ const cachefiles = [
     path + "fonts/montserrat-latin.woff2",
     path + "images/boringstuff3.jpg",
     path + "images/down-arrow.svg",
-    path + "images/icons-40.png",
+    path + "images/icons-32.png",
     path + "images/icons-192.png",
     path + "images/icons-512.png",
     path + "images/nyc-vectorstock.svg",
