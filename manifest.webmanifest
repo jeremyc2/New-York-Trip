@@ -1,7 +1,9 @@
 {
+    "author": "Jeremy Chandler",
     "short_name": "NYC-Trip",
     "name": "New York City November 2020",
     "description": "Trip details for NYC trip in November",
+    "orientation": "portrait",
     "icons": [
       {
         "src": "/New-York-Trip/images/icons-192.png",
@@ -29,5 +31,12 @@
         "url": "/New-York-Trip/activities/photoshoot.html",
         "icons": [{ "src": "/New-York-Trip/images/icons8-new-york-40.png", "sizes": "192x192" }]
       }
-    ]
+    ],
+  	"manifest_version": 2,
+    "version": "0.1",
+    "applications": {
+      "gecko": {
+        "id": "addon@example.com"
+      }
+    }
   }
