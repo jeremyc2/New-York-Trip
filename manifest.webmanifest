@@ -30,7 +30,7 @@
         "short_name": "Pics",
         "description": "Where are we going to take pictures.",
         "url": "/New-York-Trip/activities/photoshoot.html",
-        "icons": [{ "src": "/New-York-Trip/images/icons-40.png", "sizes": "192x192" }]
+        "icons": [{ "src": "/New-York-Trip/images/icons-192.png", "sizes": "192x192" }]
       }
     ]
   }
