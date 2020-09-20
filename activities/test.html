@@ -1,0 +1,154 @@
+<head>
+    <script>
+
+        function slideUp(element, step) {
+
+            var startingY = element.getBoundingClientRect().y;
+
+            console.log(`sliding up ${step}`);
+            element.animate([
+                {transform: `translateY(${startingY}px)`},
+                {transform: `translateY(${startingY + step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }
+
+        function slideDown(element, step) {
+
+            var startingY = element.getBoundingClientRect().y;
+
+            console.log(`sliding down ${step}`);
+            element.animate([
+                {transform: `translateY(${startingY}px)`},
+                {transform: `translateY(${startingY - step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }
+
+        function slideLeft(element, step) {
+
+            var startingX = element.getBoundingClientRect().x;
+
+            console.log(`sliding left ${step}`);
+            element.animate([
+                {transform: `translateX(${startingX}px)`},
+                {transform: `translateX(${startingX + step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }
+
+        function slideRight(element, step) {
+
+            var startingX = element.getBoundingClientRect().x;
+
+            console.log(`sliding right ${step}`);
+            element.animate([
+                {transform: `translateX(${startingX}px)`},
+                {transform: `translateX(${startingX - step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }
+
+        function slideBottomRight(element, step) {
+
+            var startingX = element.getBoundingClientRect().x;
+            var startingY = element.getBoundingClientRect().y;
+
+            console.log(`sliding down ${step} and right ${step}`);
+            element.animate([
+                {transform: `translateX(${startingX}px) translateY(${startingY}px)`},
+                {transform: `translateX(${startingX - step}px) translateY(${startingY - step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }      
+        
+        function slideTopLeft(element, step) {
+
+            var startingX = element.getBoundingClientRect().x;
+            var startingY = element.getBoundingClientRect().y;
+
+            console.log(`sliding up ${step} and left ${step}`);
+            element.animate([
+                {transform: `translateX(${startingX}px) translateY(${startingY}px)`},
+                {transform: `translateX(${startingX + step}px) translateY(${startingY + step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }  
+
+        function slideBottomLeft(element, step) {
+
+            var startingX = element.getBoundingClientRect().x;
+            var startingY = element.getBoundingClientRect().y;
+
+            console.log(`sliding down ${step} and left ${step}`);
+            element.animate([
+                {transform: `translateX(${startingX}px) translateY(${startingY}px)`},
+                {transform: `translateX(${startingX + step}px) translateY(${startingY - step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }  
+
+        function slideTopRight(element, step) {
+
+            var startingX = element.getBoundingClientRect().x;
+            var startingY = element.getBoundingClientRect().y;
+
+            console.log(`sliding up ${step} and right ${step}`);
+            element.animate([
+                {transform: `translateX(${startingX}px) translateY(${startingY}px)`},
+                {transform: `translateX(${startingX - step}px) translateY(${startingY + step}px)`}
+            ], {
+                duration: 500,
+                iterations: 1,
+                fill: 'forwards'
+            });
+        }  
+
+        var animations = [
+            slideDown, slideUp, slideRight, slideLeft, 
+            slideBottomRight, slideTopLeft, slideRight, 
+            slideBottomLeft, slideTopRight, slideLeft, 
+            slideDown, slideDown, slideUp, slideUp
+        ];
+
+        var i = 0;
+
+        function play(element) {
+            var step = 300;
+
+            if(i == animations.length) {
+                i = 0;
+            }
+
+            animations[i](element, step);
+
+            i++;
+
+        }
+
+    </script>
+</head>
+<body style="margin: 0; height: 371px; width: 840px; overflow: hidden;">
+    <img id="image" onclick="play(this)" src="https://i.pinimg.com/originals/91/5d/c3/915dc3b2556bce916cdcc8744bd1b7f4.jpg" style="position: absolute; top: 0; left: 0; transform: none;">  
+</body>
