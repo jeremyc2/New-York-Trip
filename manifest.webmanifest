@@ -3,6 +3,7 @@
     "short_name": "NYC",
     "name": "New York City November 2020",
     "description": "Trip details for NYC trip in November",
+    "version": "0.1",
     "orientation": "portrait",
     "icons": [
       {
@@ -31,6 +32,5 @@
         "url": "/New-York-Trip/activities/photoshoot.html",
         "icons": [{ "src": "/New-York-Trip/images/icons-40.png", "sizes": "192x192" }]
       }
-    ],
-    "version": "0.1"
+    ]
   }
